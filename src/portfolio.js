@@ -20,26 +20,29 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Kaustabh Ganguly",
+  title: "Hi, I'm Kaustabh ",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+"A skilled data engineer adept in Python, AWS Redshift, S3, SQL, and Control-M 🐍☁️🔧. Embarking on an AI Master's at IIT Madras in August 🎓🤖. Passionate about guitar, digital art, and music production 🎸🎨🎶. Hobbies include game creation, app development, and exploring ML and data analysis 🎮📱💻🧩."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1-S3wjzDK4yyheyPJ1OhsMzInSMAWcvMJ/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
+  github: "https://github.com/stabgan",
+  linkedin: "https://www.linkedin.com/in/stabgan/",
+  gmail: "kaustabhganguly@gmail.com",
+  gitlab: "https://gitlab.com/stabgan",
+  // facebook: "https://www.facebook.com/stabgan",
+  medium: "https://medium.com/@stabgan",
+  stackoverflow: "https://stackoverflow.com/users/9267288/kaustabh-ganguly",
+  instagram: "https://www.instagram.com/stabgan/",
+  twitter: "https://twitter.com/stabgan",
+  kaggle: "https://www.kaggle.com/stabgan",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -48,130 +51,233 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "The Art of My Craft",
+  subTitle: "A SAGACIOUS DATA ENGINEER INFUSED WITH A PASSION FOR AI & ML",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ The intricate dance of designing, developing, testing, and debugging existing and established ETL pipelines"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+      "⚡ The alchemy of constructing back-end views in Redshift DB for the tableau analytics dashboards"
+    ),
+    emoji(
+      "⚡ The mastery of Agile methodologies, Control-M, Amazon Redshift, S3, CICD, and the secrets beyond"
+    ),
+    emoji(
+      "⚡ A virtuoso in SQL, Red Hat Linux, Python, and the myriad tools and IDEs that forge the digital realm"
     )
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
-
+  // https://fontawesome.com/icons?d=gallery
   softwareSkills: [
     {
-      skillName: "html-5",
+      skillName: "Python",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "SQL",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "AWS",
+      fontAwesomeClassname: "fab fa-aws"
+    },
+    {
+      skillName: "Azure",
+      fontAwesomeClassname: "fab fa-microsoft"
+    },
+    {
+      skillName: "GCP",
+      fontAwesomeClassname: "fab fa-google"
+    },
+    {
+      skillName: "Git",
+      fontAwesomeClassname: "fab fa-git"
+    },
+    {
+      skillName: "Bash",
+      fontAwesomeClassname: "fas fa-terminal"
+    },
+    {
+      skillName: "HTML",
       fontAwesomeClassname: "fab fa-html5"
     },
     {
-      skillName: "css3",
+      skillName: "CSS",
       fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
     },
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "Go",
+      fontAwesomeClassname: "fas fa-chevron-circle-right"
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
+      skillName: "Kotlin",
+      fontAwesomeClassname: "fas fa-chevron-circle-down"
+    },
+
+    {
+      skillName: "AI",
+      fontAwesomeClassname: "fas fa-brain"
     },
     {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
+      skillName: "ML",
+      fontAwesomeClassname: "fas fa-robot"
     },
     {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
+      skillName: "DL",
+      fontAwesomeClassname: "fas fa-network-wired"
     },
     {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "Research",
+      fontAwesomeClassname: "fas fa-search"
     },
     {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
+      skillName: "Control-M",
+      fontAwesomeClassname: "fas fa-tasks"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
+      skillName: "IoT",
+      fontAwesomeClassname: "fas fa-network-wired"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "Blockchain",
+      fontAwesomeClassname: "fas fa-link"
     },
     {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
-    }
-  ],
+      skillName: "Algorithms",
+      fontAwesomeClassname: "fas fa-project-diagram"
+    },
+    {
+      skillName: "Unity",
+      fontAwesomeClassname: "fab fa-unity"
+    },
+    {
+      skillName: "Android Studio",
+      fontAwesomeClassname: "fab fa-android"
+    },
+    {
+      skillName: "Photoshop",
+      fontAwesomeClassname: "fas fa-photo-video"
+    },
+    {
+      skillName: "GarageBand",
+      fontAwesomeClassname: "fas fa-music"
+    },
+  ]
+  ,
   display: true // Set false to hide this section, defaults to true
 };
-
 // Education Section
 
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      schoolName: "Kalyani Government Engineering College",
+      logo: require("./assets/images/kgec"),
+      subHeader: "Bachelor of Technology - BTech, Information Technology",
+      duration: "2016 - 2020",
+      desc: "Grade: 8.15/10",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Member of the NOVA - Astronomy club of KGEC, embracing the celestial wonders.",
+        "Participant in the Les Quizerables - Quiz club of KGEC, challenging the intellect.",
+        "Contributor to the KeyGEn Coders - Coding club of KGEC, honing digital craftsmanship.",
+        "Recipient of the Swami Vivekananda Merit Cum Means Scholarship by the Government of West Bengal for four years.",
+        "Beginning with a College GPA of 7.12 in the first semester, progressing steadily to 9.14 in the 8th semester, and achieving an overall aggregate SGPA of 8.15 upon graduation."
       ]
     },
     {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      schoolName: "Ramakrishna Vivekananda Mission Vidyabhawan (HS Unit)",
+      logo: require("./assets/images/logo2.png"),
+      subHeader: "Higher Secondary School",
+      duration: "2014 - 2016",
+      desc: "80% in WBCHSE 2016",
+      descBullets: [
+        "Secured the 3rd prize in Adamas Science Camp by crafting a steam put put boat from modest materials, costing under a dollar.",
+        "Attained the rank of 3450 among 100k+ participants in WBJEE 2016."
+      ]
+    },
+    {
+      schoolName: "Ramakrishna Vivekananda Mission",
+      logo: require("./assets/images/logo.png"),
+      subHeader: "Secondary School",
+      duration: "2012 - 2014",
+      desc: "Achieved 89% in WBBSE 2014",
+      descBullets: [
+        "Ranked zonal 2 and West Bengal all-over 46 in PNTSE-2014, showcasing intellectual aptitude.",
+        "Distinguished as the topper in the 3-month program “Computer Fundamental and Windows, Audacity, Internet, Photoshop, and Flash” from Brainware Computer Academy in 2014, earning the title of “Excellent”."
+      ]
+    },
+    {
+      schoolName: "Gopal Govinda Academy",
+      logo: require("./assets/images/logo2.png"),
+      subHeader: "High School",
+      duration: "2000 - 2012",
+      desc: "Studied from KG-1 to 8th (English Medium) in Gopal Govinda Academy",
+      descBullets: [
+        "Earned Diploma with first division and distinction each year in Pracheen Kala Kendra, Chandigarh up to Sangeet Bhushan part-1 in Vocal Classical, Rabindra Sangeet, and Najrul Geeti, embracing the tradition of musical arts.",
+        "Received Senior Diploma - 1 with first division in Sarbabharatiya Charu-O-Karukala Niket, upon the completion of the 4th year in Fine Arts, showcasing artistic dedication."
+      ]
     }
   ]
 };
 
+
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true, //Set it to true to show Proficiency Section,
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
+      Stack: "Python/OOP", //Insert stack or technology you have experience in
       progressPercentage: "90%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Backend",
+      Stack: "SQL/Database/ETL/Control-m",
+      progressPercentage: "85%"
+    },
+    {
+      Stack: "System/Database Design",
       progressPercentage: "70%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
-  ],
+      Stack: "Cloud/AWS/Azure/GCP",
+      progressPercentage: "80%"
+    },
+    {
+      Stack: "ML/DL/AI",
+      progressPercentage: "65%"
+    },
+    {
+      Stack: "IOT/Research",
+      progressPercentage: "50%"
+    },
+    {
+      Stack: "Linux/Git/CICD",
+      progressPercentage: "70%"
+    },
+    {
+      Stack: "HTML/CSS/JS",
+      progressPercentage: "50%"
+    },
+    {
+      Stack: "Android Studio/Unity/Unreal",
+      progressPercentage: "40%"
+    },
+    {
+      Stack: "Photoshop/Garageband/iMovies/Audacity/Etc",
+      progressPercentage: "50%"
+    }],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
 
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: false, //Set it to true to show workExperiences Section
   experience: [
     {
       role: "Software Engineer",
@@ -239,7 +345,7 @@ const bigProjects = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -300,7 +406,7 @@ const achievementSection = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -324,7 +430,7 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -343,7 +449,7 @@ const talkSection = {
       event_url: "https://www.facebook.com/events/2339906106275053/"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -356,25 +462,25 @@ const podcastSection = {
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
+    "For oppportunities in your organisation, contact me through following.",
   number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  email_address: "kaustabhganguly@gmail.com"
 };
 
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
+  userName: "stabgan", //Replace "twitter" with your twitter username without @
   display: true // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,
