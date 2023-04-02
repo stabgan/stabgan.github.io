@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
       branches:
-        - new-branch
+        - master
 jobs:
   check-format:
     runs-on: ubuntu-latest
