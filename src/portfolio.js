@@ -147,10 +147,6 @@ const skillsSection = {
       fontAwesomeClassname: "fas fa-link"
     },
     {
-      skillName: "Algorithms",
-      fontAwesomeClassname: "fas fa-project-diagram"
-    },
-    {
       skillName: "Unity",
       fontAwesomeClassname: "fab fa-unity"
     },
@@ -268,7 +264,7 @@ const techStack = {
       progressPercentage: "40%"
     },
     {
-      Stack: "Photoshop/Garageband/iMovies/Audacity/Etc",
+      Stack: "Audio/Video Editino",
       progressPercentage: "50%"
     }],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -277,32 +273,44 @@ const techStack = {
 // Work experience section
 
 const workExperiences = {
-  display: false, //Set it to true to show workExperiences Section
+  display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "Data Engineer",
+      company: "Johnson & Johnson (Contractor through vendor TCS)",
+      companylogo: require("./assets/images/jnj_logo.jpg"),
+      date: "January 2021 – Present",
+      desc: "Seasoned Data Engineer adept at ETL pipelines, Tableau back-end views, and diverse technologies, with a focus on leadership and automation.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Mentor in best practices, requirements gathering, and story assistance",
+        "Automated manual tasks using cronjobs and Python scripts for increased efficiency",
+        "Collaborated closely with stakeholders for smooth SDLC processes",
+        "Executed over 80 production releases with a rework rate of less than 5%",
+        "Flawlessly performed SIT for numerous production releases as an SDET",
+        "Developed high-impact dashboard connecting SAP and SFDC data in Redshift datalake"
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Systems Engineer",
+      company: "Tata Consultancy Services",
+      companylogo: require("./assets/images/tcs_logo.jpg"),
+      date: "October 2020 – Present",
+      desc: "Experienced data engineer with strong product development background, excelling in performance and contributing to the growth of TCS and its clients.",
+
+descBullets: [
+"Secured a TCS Digital role after cracking the TCS CodeVita in 2019; trained in product design, Python, agile methodologies, and effective communication.",
+"Led a team to design and develop a smart shower system prototype, winning the best product award during the Initial Learning Program (ILP); utilized SWOT, PESTLE, Scenario Planning, Critical Success Factor Analysis, and The Five Forces methods for comprehensive analysis.",
+"Completed courses in security, business, and other corporate essentials; joined Johnson & Johnson as a data engineer contractor via TCS.",
+"Achieved back-to-back 'A' bands in 2022 and 2023, along with a 5/5 rating in the first-year anniversary; recognized as Hi-Talent with an award for exceptional contribution from TCS higher management.",
+"Was offered an onsite opportunity by TCS after completing one year."
+]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "Machine Learning Intern",
+      company: "Param.ai",
+      companylogo: require("./assets/images/param_logo.jpg"),
+      date: "June 2018 – July 2018",
+      desc: "Significantly contributed to the company's Natural Language Processing and Attention Network models, enhancing their overall value and performance."
     }
   ]
 };
