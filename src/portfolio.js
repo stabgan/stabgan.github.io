@@ -273,7 +273,7 @@ const techStack = {
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true, // Set it to true to show workExperiences Section
   experience: [
     {
       role: "Data Engineer",
@@ -296,14 +296,13 @@ const workExperiences = {
       companylogo: require("./assets/images/tcs_logo.jpg"),
       date: "October 2020 – Present",
       desc: "Experienced data engineer with strong product development background, excelling in performance and contributing to the growth of TCS and its clients.",
-
-descBullets: [
-"Secured a TCS Digital role after cracking the TCS CodeVita in 2019; trained in product design, Python, agile methodologies, and effective communication.",
-"Led a team to design and develop a smart shower system prototype, winning the best product award during the Initial Learning Program (ILP); utilized SWOT, PESTLE, Scenario Planning, Critical Success Factor Analysis, and The Five Forces methods for comprehensive analysis.",
-"Completed courses in security, business, and other corporate essentials; joined Johnson & Johnson as a data engineer contractor via TCS.",
-"Achieved back-to-back 'A' bands in 2022 and 2023, along with a 5/5 rating in the first-year anniversary; recognized as Hi-Talent with an award for exceptional contribution from TCS higher management.",
-"Was offered an onsite opportunity by TCS after completing one year."
-]
+      descBullets: [
+        "Secured a TCS Digital role after cracking the TCS CodeVita in 2019; trained in product design, Python, agile methodologies, and effective communication.",
+        "Led a team to design and develop a smart shower system prototype, winning the best product award during the Initial Learning Program (ILP); utilized SWOT, PESTLE, Scenario Planning, Critical Success Factor Analysis, and The Five Forces methods for comprehensive analysis.",
+        "Completed courses in security, business, and other corporate essentials; joined Johnson & Johnson as a data engineer contractor via TCS.",
+        "Achieved back-to-back 'A' bands in 2022 and 2023, along with a 5/5 rating in the first-year anniversary; recognized as Hi-Talent with an award for exceptional contribution from TCS higher management.",
+        "Was offered an onsite opportunity by TCS after completing one year."
+      ]
     },
     {
       role: "Machine Learning Intern",
@@ -314,6 +313,7 @@ descBullets: [
     }
   ]
 };
+
 
 /* Your Open Source Section to View Your Github Pinned Projects
 To know how to get github key look at readme.md */
