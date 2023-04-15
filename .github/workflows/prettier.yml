@@ -29,4 +29,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Apply prettier changes")
+          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push
