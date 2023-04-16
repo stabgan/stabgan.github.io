@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy with Image Optimization
 env:
   CI: false
   GITHUB_USERNAME: ${{ github.repository_owner }}
@@ -20,10 +20,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧 # Build the Project
+      - name: Install and Build 🔧 # Build the Project and run Image Optimization
         run: |
           npm install
           npm run build
+          npm ci
+          npx calibre optimize '**/*.{jpg,jpeg,png,webp,gif}' --github-token ${{ secrets.GH_PAGES_TOKEN }} --commit
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
