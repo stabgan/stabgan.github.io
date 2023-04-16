@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Run Image Optimization
-        uses: calibreapp/image-actions@v2
+        uses: calibreapp/image-actions@main
         with:
           githubToken: ${{ secrets.GH_PAGES_TOKEN }}
           compressOnly: true
