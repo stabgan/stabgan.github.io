@@ -21,6 +21,9 @@ export default function SoftwareSkill() {
           })}
         </ul>
       </div>
+
     </div>
-  );
+
+
+);
 }

@@ -6,9 +6,16 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
+import CodersrankSummary from '@codersrank/summary';
 
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+function defineCustomElement(name, constructor) {
+  if (!window.customElements.get(name)) {
+    window.customElements.define(name, constructor);
+  }
+}
+defineCustomElement('codersrank-summary', CodersrankSummary.constructor);
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -37,6 +44,7 @@ export default function Greeting() {
               >
                 {greeting.subTitle}
               </p>
+              <codersrank-summary show-avatar="false" badges="0" branding="false" username="stabgan"></codersrank-summary>
               <SocialMedia />
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />

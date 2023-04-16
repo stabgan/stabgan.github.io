@@ -1,9 +1,12 @@
 {
   "homepage": "https://stabgan.github.io/",
-  "name": "Kaustabh's portfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@codersrank/activity": "^0.9.14",
+    "@codersrank/skills-chart": "^0.9.21",
+    "@codersrank/summary": "^0.9.13",
     "colorthief": "^2.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",

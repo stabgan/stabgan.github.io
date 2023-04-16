@@ -1,5 +1,12 @@
 @import "../../_globalColor";
 
+
+codersrank-skills-chart {
+  --font-family: inherit;
+  --label-font-size: 20px;
+  --legend-font-size:20px;
+}
+
 .skills-main-div {
   display: flex;
   width: 100%;
@@ -24,6 +31,7 @@
   font-size: 56px;
   font-weight: 400;
 }
+
 .subTitle {
   color: $subTitle;
 }
@@ -33,7 +41,11 @@
   .skills-heading {
     font-size: 40px;
   }
+
 }
+
+
+
 @media (max-width: 768px) {
   .skills-heading {
     font-size: 30px;
@@ -60,5 +72,9 @@
   .skills-image-div {
     /* display: none; */
     order: 2;
+  }
+  codersrank-skills-chart {
+    --label-font-size: 6px;
+    --legend-font-size: 10px;
   }
 }

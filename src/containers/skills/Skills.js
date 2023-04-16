@@ -6,6 +6,9 @@ import {Fade} from "react-reveal";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import StyleContext from "../../contexts/StyleContext";
+import CodersRankSkillsChart from '@codersrank/skills-chart';
+
+window.customElements.define('codersrank-skills-chart', CodersRankSkillsChart);
 
 export default function Skills() {
   const {isDark} = useContext(StyleContext);
@@ -62,7 +65,14 @@ export default function Skills() {
             </div>
           </div>
         </Fade>
+
       </div>
+      <div className="skills-text-div">
+        <h1
+            className={isDark ? "dark-mode skills-heading " : "skills-heading "}
+        >Developer Chart Plotted over time</h1>
+      </div>
+      <codersrank-skills-chart branding="false" labels="true" legend="true" tooltip="true" sort-by-score="true" username="stabgan"></codersrank-skills-chart>
     </div>
   );
 }

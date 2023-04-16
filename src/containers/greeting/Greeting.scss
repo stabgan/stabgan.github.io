@@ -1,5 +1,16 @@
 @import "../../_globalColor";
 
+codersrank-summary {
+  --header-bg-color: $darkBackground;
+  --header-text-color: grey;
+  --bg-color: $darkBackground;
+  --name-font-size: 0px;
+  --rank-font-size: 40px;
+  padding-bottom: 30px;
+
+}
+
+
 .main {
   width: 90%;
   padding: 20px 10px;
@@ -90,6 +101,7 @@
   .greeting-text-p {
     font-size: 20px;
   }
+
 }
 @media (max-width: 768px) {
   .button-greeting-div {
@@ -110,10 +122,24 @@
   .greeting-image-div {
     height: 256px;
   }
+  codersrank-summary {
+    --rank-font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Set the height of the parent container as needed */
+  }
 }
 
 @media (max-width: 320px) {
   .main {
     width: auto;
+  }
+  codersrank-summary {
+    --rank-font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Set the height of the parent container as needed */
   }
 }
