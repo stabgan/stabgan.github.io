@@ -1,9 +1,9 @@
-name: Check and Fix Format
+name: Check Format
 on:
   push:
   pull_request:
-    branches:
-      - master
+      branches:
+        - master
 jobs:
   check-format:
     runs-on: ubuntu-latest
@@ -20,14 +20,6 @@ jobs:
       - name: Install Prettier
         run: npm install -g prettier
 
-      - name: Run Prettier
+      - name: Check Format
         run: |
-          prettier --write "./**/*.{js,css,json}"
-
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git diff --quiet && git diff --staged --quiet || (git add . && git commit -m "Apply prettier changes")
-          git remote set-url origin "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-          git push
+          prettier -c "./**/*.{js,css,json}"
