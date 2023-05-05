@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a6ac10a9.css",
-    "main.js": "/static/js/main.53576f9e.js",
+    "main.js": "/static/js/main.e2023dde.js",
     "static/css/64.bba8fa55.chunk.css": "/static/css/64.bba8fa55.chunk.css",
     "static/js/64.ec95194b.chunk.js": "/static/js/64.ec95194b.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/static/css/769.b3cbb36b.chunk.css",
@@ -13,6 +13,7 @@
     "static/media/kgec": "/static/media/kgec.09a26ef4cdeb7a605a58",
     "static/media/efsetlogo.png": "/static/media/efsetlogo.01ebb237cd338a93e819.png",
     "static/media/manOnTable.svg": "/static/media/manOnTable.f861b03b5a2d1a28c1986a9155d85549.svg",
+    "static/media/google_logo.png": "/static/media/google_logo.89e2904e949efc046c24.png",
     "static/media/contactMailDark.svg": "/static/media/contactMailDark.d15cfd18439fe05fe75d13985e018781.svg",
     "static/media/developerActivity.svg": "/static/media/developerActivity.967f31dad3158d5be07b317ff90f8f9d.svg",
     "static/media/cour_logo.png": "/static/media/cour_logo.d2a879a60d168d11bc09.png",
@@ -23,7 +24,7 @@
     "index.html": "/index.html",
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.b7e63729a2580bdd4b07.svg",
     "main.a6ac10a9.css.map": "/static/css/main.a6ac10a9.css.map",
-    "main.53576f9e.js.map": "/static/js/main.53576f9e.js.map",
+    "main.e2023dde.js.map": "/static/js/main.e2023dde.js.map",
     "64.bba8fa55.chunk.css.map": "/static/css/64.bba8fa55.chunk.css.map",
     "64.ec95194b.chunk.js.map": "/static/js/64.ec95194b.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/static/css/769.b3cbb36b.chunk.css.map",
@@ -31,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.a6ac10a9.css",
-    "static/js/main.53576f9e.js"
+    "static/js/main.e2023dde.js"
   ]
 }
