@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #F5F1EB;
-  --color-bg-alt: #EDE8E0;
+  --color-bg: #FAF9F5;
+  --color-bg-alt: #F0EEE6;
   --color-surface: #FFFFFF;
   --color-surface-hover: #FAF8F5;
-  --color-border: #E0DAD0;
-  --color-border-light: #EDE8E0;
+  --color-border: #D1CFC5;
+  --color-border-light: #E5E2DA;
+  --color-border-bold: #141413;
   --color-accent: #C6613F;
   --color-accent-light: #D97757;
   --color-accent-subtle: #F0DDD4;
-  --color-text: #1A1A19;
+  --color-text: #141413;
   --color-text-secondary: #5C5B57;
   --color-text-muted: #9C9A95;
-  --color-text-inverse: #F5F1EB;
+  --color-text-inverse: #FAF9F5;
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -42,36 +43,108 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
 
-/* Anthropic-style asymmetric button */
+/* Anthropic asymmetric button — 8px top-left, 0 others */
 .btn-primary {
   background: var(--color-text);
   color: var(--color-text-inverse);
-  border-radius: 8px 2px 2px 2px;
-  padding: 0.625rem 1.5rem;
+  border-radius: 8px 0 0 8px;
+  padding: 0.75rem 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 .btn-primary:hover {
   background: var(--color-accent);
 }
 
-/* Subtle card style */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border-bold);
+  border-radius: 8px 0 0 8px;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.btn-secondary:hover {
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+}
+
+/* Animated underline for links */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Bold section border — Anthropic's signature structural element */
+.section-border {
+  border-top: 2px solid var(--color-border-bold);
+}
+
+/* Thin section divider */
+.divider {
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+/* Card with hover lift */
 .card {
   background: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: 2px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .card:hover {
   border-color: var(--color-border);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
-/* Divider */
-.divider {
-  height: 1px;
-  background: var(--color-border-light);
+/* Stagger animation for text characters */
+@keyframes char-reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade-in-up for scroll reveals */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle pulse for "current" indicators */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.pulse-subtle {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Horizontal rule with accent */
+.hr-accent {
+  border: none;
+  height: 3px;
+  background: var(--color-accent);
+  width: 48px;
 }
 
 /* Reduced motion */
