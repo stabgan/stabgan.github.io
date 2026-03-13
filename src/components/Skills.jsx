@@ -1,69 +1,56 @@
 import { motion } from "framer-motion";
-import { Award, Brain, Trophy } from "lucide-react";
 import { skills, certifications, testScores, honors } from "../data";
-
-const catColors = {
-  "ML & AI": { border: "border-cyan/20", bg: "bg-cyan/5", text: "text-cyan", label: "text-cyan/70" },
-  "NLP & LLMs": { border: "border-violet/20", bg: "bg-violet/5", text: "text-violet", label: "text-violet/70" },
-  "Data Engineering": { border: "border-emerald/20", bg: "bg-emerald/5", text: "text-emerald", label: "text-emerald/70" },
-  "Languages": { border: "border-amber/20", bg: "bg-amber/5", text: "text-amber", label: "text-amber/70" },
-  "Cloud & Infra": { border: "border-blue-400/20", bg: "bg-blue-400/5", text: "text-blue-400", label: "text-blue-400/70" },
-};
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 px-6">
-      <div className="max-w-5xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-display text-2xl sm:text-3xl font-bold text-center mb-16 gradient-text"
-        >
-          Tech Arsenal
-        </motion.h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Object.entries(skills).map(([cat, items], i) => {
-            const c = catColors[cat];
-            return (
-              <motion.div
-                key={cat}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className={`rounded-xl border ${c.border} bg-surface p-5`}
-              >
-                <h3 className={`text-xs uppercase tracking-widest ${c.label} mb-3`}>{cat}</h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {items.map((s) => (
-                    <span key={s} className={`text-xs px-2.5 py-1 rounded-md ${c.bg} ${c.text} border ${c.border} hover:scale-105 transition-transform cursor-default`}>
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Test Scores & Competitive */}
+    <section id="skills" className="py-32 px-6">
+      <div className="max-w-[1000px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-6 rounded-xl border border-cyan/10 bg-surface p-5"
+          className="mb-16"
         >
-          <h3 className="text-xs uppercase tracking-widest text-cyan/70 mb-4 flex items-center gap-2">
-            <Brain size={14} className="text-cyan" />
-            Test Scores & Competitive
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-text">
+            Expertise
+          </h2>
+          <div className="w-12 h-[2px] bg-accent mt-4" />
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(skills).map(([cat, items], i) => (
+            <motion.div
+              key={cat}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+            >
+              <h3 className="text-xs uppercase tracking-[0.15em] text-text-muted mb-4">{cat}</h3>
+              <div className="flex flex-wrap gap-2">
+                {items.map((s) => (
+                  <span key={s} className="text-[13px] px-3 py-1.5 rounded-sm bg-surface border border-border-light text-text-secondary hover:border-accent/30 hover:text-accent transition-colors cursor-default">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Test Scores */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h3 className="font-serif text-xl font-medium text-text mb-8">Test Scores</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {testScores.map((t, i) => (
-              <div key={i} className="text-center">
-                <p className="text-sm font-mono font-medium text-cyan">{t.score}</p>
-                <p className="text-[11px] text-text-muted mt-0.5">{t.name}</p>
+              <div key={i}>
+                <p className="text-lg font-mono font-medium text-text">{t.score}</p>
+                <p className="text-xs text-text-muted mt-1">{t.name} · {t.year}</p>
               </div>
             ))}
           </div>
@@ -74,17 +61,15 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-6 rounded-xl border border-amber/10 bg-surface p-5"
+          className="mt-20"
         >
-          <h3 className="text-xs uppercase tracking-widest text-amber/70 mb-4 flex items-center gap-2">
-            <Award size={14} className="text-amber" />
-            Certifications ({certifications.length})
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+          <h3 className="font-serif text-xl font-medium text-text mb-2">Certifications</h3>
+          <p className="text-sm text-text-muted mb-8">{certifications.length} professional certifications</p>
+          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-3">
             {certifications.map((c, i) => (
-              <div key={i} className="flex items-baseline justify-between gap-2 py-1 border-b border-border/30 last:border-0">
-                <p className="text-xs text-text-secondary truncate">{c.name}</p>
-                <p className="text-[10px] text-text-muted shrink-0 font-mono">{c.issuer} · {c.year}</p>
+              <div key={i} className="flex items-baseline justify-between gap-3 py-2 border-b border-border-light">
+                <p className="text-[13px] text-text-secondary truncate">{c.name}</p>
+                <p className="text-[11px] text-text-muted shrink-0 font-mono">{c.year}</p>
               </div>
             ))}
           </div>
@@ -95,16 +80,12 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-6 rounded-xl border border-violet/10 bg-surface p-5"
+          className="mt-16"
         >
-          <h3 className="text-xs uppercase tracking-widest text-violet/70 mb-3 flex items-center gap-2">
-            <Trophy size={14} className="text-violet" />
-            Honors & Awards
-          </h3>
-          <ul className="space-y-1.5">
+          <h3 className="font-serif text-xl font-medium text-text mb-6">Honors</h3>
+          <ul className="space-y-2">
             {honors.map((h, i) => (
-              <li key={i} className="text-xs text-text-secondary flex gap-2">
-                <span className="text-violet/50 mt-0.5 shrink-0">▸</span>
+              <li key={i} className="text-[15px] text-text-secondary pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[10px] before:w-1.5 before:h-[1px] before:bg-accent">
                 {h}
               </li>
             ))}

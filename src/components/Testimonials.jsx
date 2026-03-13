@@ -1,49 +1,42 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 import { recommendations } from "../data";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-28 px-6">
-      <div className="max-w-5xl mx-auto">
-        <motion.h2
+    <section id="testimonials" className="py-32 px-6 bg-bg-alt">
+      <div className="max-w-[1000px] mx-auto">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-2xl sm:text-3xl font-bold text-center mb-4 gradient-text"
+          className="mb-16"
         >
-          Testimonials
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-sm text-text-muted mb-14"
-        >
-          What colleagues and managers say
-        </motion.p>
+          <h2 className="font-serif text-[clamp(2rem,4vw,3rem)] font-medium text-text">
+            What people say
+          </h2>
+          <div className="w-12 h-[2px] bg-accent mt-4" />
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-8">
           {recommendations.map((rec, i) => (
-            <motion.div
+            <motion.blockquote
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              className={`rounded-xl border border-border bg-surface p-5 flex flex-col ${
-                i === 0 ? "md:col-span-2" : ""
-              }`}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              className={i === 0 ? "md:col-span-2" : ""}
             >
-              <Quote size={16} className="text-violet/40 mb-3 shrink-0" />
-              <p className="text-sm text-text-secondary leading-relaxed flex-1 italic">
-                "{rec.quote}"
+              <p className={`font-serif leading-[1.6] text-text ${
+                i === 0 ? "text-xl sm:text-2xl" : "text-[17px]"
+              }`}>
+                &ldquo;{rec.quote}&rdquo;
               </p>
-              <div className="mt-4 pt-3 border-t border-border/50">
+              <footer className="mt-5">
                 <p className="text-sm font-medium text-text">{rec.name}</p>
-                <p className="text-xs text-text-muted">{rec.role} · {rec.relation} · {rec.date}</p>
-              </div>
-            </motion.div>
+                <p className="text-xs text-text-muted mt-0.5">{rec.role} · {rec.date}</p>
+              </footer>
+            </motion.blockquote>
           ))}
         </div>
       </div>

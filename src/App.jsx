@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
-import NeuralCanvas from "./components/NeuralCanvas";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Manifesto from "./components/Manifesto";
@@ -25,10 +24,9 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-bg text-text relative">
-      <NeuralCanvas />
+    <div className="min-h-screen bg-bg text-text">
       <Header />
-      <main className="relative z-10">
+      <main>
         <Hero />
         <Manifesto />
         <ImpactDashboard />

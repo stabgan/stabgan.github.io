@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050510;
-  --color-surface: #0a0a1a;
-  --color-surface-hover: #12122a;
-  --color-border: #1a1a3e;
-  --color-cyan: #00f0ff;
-  --color-violet: #7c3aed;
-  --color-amber: #f59e0b;
-  --color-emerald: #10b981;
-  --color-text: #e8e8f0;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #475569;
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --color-bg: #F5F1EB;
+  --color-bg-alt: #EDE8E0;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #FAF8F5;
+  --color-border: #E0DAD0;
+  --color-border-light: #EDE8E0;
+  --color-accent: #C6613F;
+  --color-accent-light: #D97757;
+  --color-accent-subtle: #F0DDD4;
+  --color-text: #1A1A19;
+  --color-text-secondary: #5C5B57;
+  --color-text-muted: #9C9A95;
+  --color-text-inverse: #F5F1EB;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -26,88 +28,50 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(0, 240, 255, 0.3);
-  color: white;
+  background: rgba(198, 97, 63, 0.2);
+  color: var(--color-text);
 }
 
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
 
-.gradient-text {
-  background: linear-gradient(135deg, #00f0ff, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Anthropic-style asymmetric button */
+.btn-primary {
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+  border-radius: 8px 2px 2px 2px;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--color-accent);
 }
 
-.gradient-text-warm {
-  background: linear-gradient(135deg, #7c3aed, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glass {
-  background: rgba(10, 10, 26, 0.7);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 240, 255, 0.08);
-}
-
-.glow-cyan { box-shadow: 0 0 30px rgba(0, 240, 255, 0.12); }
-.glow-violet { box-shadow: 0 0 30px rgba(124, 58, 237, 0.12); }
-
-
-/* Gradient border animation for cards */
-.gradient-border {
-  position: relative;
+/* Subtle card style */
+.card {
   background: var(--color-surface);
-  border-radius: 1rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 2px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: conic-gradient(from var(--angle, 0deg), transparent 60%, #00f0ff 75%, #7c3aed 85%, transparent 95%);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s;
-  animation: rotate-border 4s linear infinite;
-}
-.gradient-border:hover::before {
-  opacity: 1;
-}
-@keyframes rotate-border {
-  to { --angle: 360deg; }
-}
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+.card:hover {
+  border-color: var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Pulse animation for current role */
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(0, 240, 255, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
-}
-.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-
-/* Paper texture for publications */
-.paper {
-  background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
-  color: #1a1a2e;
-}
-
-/* Terminal styling */
-.terminal {
-  background: #0c0c14;
-  border: 1px solid #1a1a3e;
-  font-family: var(--font-mono);
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--color-border-light);
 }
 
 /* Reduced motion */
