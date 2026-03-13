@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #6366f1;
-  --color-accent: #8b5cf6;
-  --color-surface: #0f172a;
-  --color-surface-light: #1e293b;
-  --color-surface-lighter: #334155;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-bg: #050510;
+  --color-surface: #0a0a1a;
+  --color-surface-hover: #12122a;
+  --color-border: #1a1a3e;
+  --color-cyan: #00f0ff;
+  --color-violet: #7c3aed;
+  --color-amber: #f59e0b;
+  --color-emerald: #10b981;
+  --color-text: #e8e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #475569;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 html {
@@ -15,58 +23,98 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-surface);
-  color: #e2e8f0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--color-primary);
+  background: rgba(0, 240, 255, 0.3);
   color: white;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-surface);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-surface-lighter);
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+  background: linear-gradient(135deg, #00f0ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #7c3aed, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glass {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  background: rgba(10, 10, 26, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.08);
 }
 
-.glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
-}
+.glow-cyan { box-shadow: 0 0 30px rgba(0, 240, 255, 0.12); }
+.glow-violet { box-shadow: 0 0 30px rgba(124, 58, 237, 0.12); }
 
-.delay-1000 {
-  animation-delay: 1s;
-}
 
-/* Smooth section transitions */
-section {
+/* Gradient border animation for cards */
+.gradient-border {
   position: relative;
+  background: var(--color-surface);
+  border-radius: 1rem;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle, 0deg), transparent 60%, #00f0ff 75%, #7c3aed 85%, transparent 95%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+  animation: rotate-border 4s linear infinite;
+}
+.gradient-border:hover::before {
+  opacity: 1;
+}
+@keyframes rotate-border {
+  to { --angle: 360deg; }
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
-/* Subtle noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
+/* Pulse animation for current role */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 240, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.6); }
+}
+.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* Paper texture for publications */
+.paper {
+  background: linear-gradient(135deg, #f5f0e8 0%, #ede8dc 100%);
+  color: #1a1a2e;
+}
+
+/* Terminal styling */
+.terminal {
+  background: #0c0c14;
+  border: 1px solid #1a1a3e;
+  font-family: var(--font-mono);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }

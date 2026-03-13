@@ -1,72 +1,83 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import { personal } from "../data";
+
+const lines = [
+  { text: 'echo "Let\'s build something together"', delay: 0 },
+  { text: `mail ${personal.email}`, href: `mailto:${personal.email}`, delay: 0.3 },
+  { text: `open github.com/stabgan`, href: personal.github, delay: 0.5 },
+  { text: `open linkedin.com/in/stabgan`, href: personal.linkedin, delay: 0.7 },
+  { text: `open huggingface.co/stabgan`, href: personal.huggingface, delay: 0.9 },
+];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-2xl mx-auto text-center">
+    <section id="contact" className="py-28 px-6">
+      <div className="max-w-2xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-6"
+          className="font-display text-2xl sm:text-3xl font-bold text-center mb-4 gradient-text"
         >
-          <span className="gradient-text">Let's Connect</span>
+          Connect
         </motion.h2>
-
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-slate-400 mb-10 text-sm leading-relaxed"
+          className="text-center text-sm text-text-muted mb-10"
         >
-          Always open to discussing ML engineering, research collaborations, or interesting problems.
-          Drop me a line or connect on socials.
+          Open to ML engineering roles, research collaborations, or interesting problems.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex items-center justify-center gap-4 flex-wrap"
+          className="terminal rounded-xl overflow-hidden"
         >
-          <a
-            href={`mailto:${personal.email}`}
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium transition-colors duration-200"
-          >
-            <Mail size={16} />
-            Say Hello
-          </a>
-          <a
-            href={personal.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full glass text-sm text-slate-300 hover:text-white hover:border-indigo-500/40 transition-all duration-200"
-          >
-            <Github size={16} />
-            GitHub
-          </a>
-          <a
-            href={personal.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full glass text-sm text-slate-300 hover:text-white hover:border-indigo-500/40 transition-all duration-200"
-          >
-            <Linkedin size={16} />
-            LinkedIn
-          </a>
-          <a
-            href={personal.huggingface}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-full glass text-sm text-slate-300 hover:text-white hover:border-indigo-500/40 transition-all duration-200"
-          >
-            <span>🤗</span>
-            HuggingFace
-          </a>
+          {/* Window chrome */}
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
+            <div className="w-3 h-3 rounded-full bg-red-500/70" />
+            <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+            <div className="w-3 h-3 rounded-full bg-green-500/70" />
+            <span className="text-[10px] text-text-muted ml-2 font-mono">stabgan@connect:~</span>
+          </div>
+
+          <div className="p-5 space-y-3">
+            {lines.map((line, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: line.delay }}
+              >
+                {line.href ? (
+                  <a
+                    href={line.href}
+                    target={line.href.startsWith("mailto") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 text-sm font-mono"
+                  >
+                    <span className="text-cyan/50">$</span>
+                    <span className="text-text-secondary group-hover:text-cyan transition-colors">{line.text}</span>
+                    <span className="text-text-muted group-hover:text-cyan transition-colors ml-auto">→</span>
+                  </a>
+                ) : (
+                  <div className="flex items-center gap-2 text-sm font-mono">
+                    <span className="text-cyan/50">$</span>
+                    <span className="text-emerald/80">{line.text}</span>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+
+            <div className="flex items-center gap-2 text-sm font-mono pt-2">
+              <span className="text-cyan/50">$</span>
+              <span className="animate-pulse text-text-muted">▌</span>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

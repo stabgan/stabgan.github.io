@@ -1,58 +1,93 @@
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
-import { experience } from "../data";
+import { Briefcase, GraduationCap } from "lucide-react";
+import { experience, education } from "../data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="experience" className="py-28 px-6">
+      <div className="max-w-3xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-16 text-center"
+          className="font-display text-2xl sm:text-3xl font-bold text-center mb-16 gradient-text"
         >
-          <span className="gradient-text">Experience</span>
+          Experience
         </motion.h2>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-violet-500/30 to-transparent" />
+          <div className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-cyan/40 via-violet/20 to-transparent" />
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {experience.map((exp, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative pl-12 md:pl-20"
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="relative pl-10"
               >
-                {/* Timeline dot */}
-                <div className="absolute left-2 md:left-6 top-1 w-5 h-5 rounded-full bg-surface border-2 border-indigo-500 flex items-center justify-center">
-                  <Briefcase size={10} className="text-indigo-400" />
+                <div className={`absolute left-0 top-1.5 w-[23px] h-[23px] rounded-full border-2 flex items-center justify-center ${
+                  exp.current
+                    ? "border-cyan bg-cyan/10 pulse-glow"
+                    : "border-border bg-surface"
+                }`}>
+                  <Briefcase size={10} className={exp.current ? "text-cyan" : "text-text-muted"} />
                 </div>
 
-                <div className="glass rounded-2xl p-6 hover:glow transition-shadow duration-300">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
-                    <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
-                    <span className="text-xs font-mono text-indigo-400 shrink-0">{exp.period}</span>
+                <div className="rounded-xl border border-border bg-surface p-5 hover:border-cyan/20 transition-colors duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                    <h3 className="text-base font-semibold text-text">{exp.role}</h3>
+                    <span className="text-xs font-mono text-text-muted shrink-0">{exp.period}</span>
                   </div>
-                  <p className="text-sm text-slate-400 mb-4">
-                    {exp.company} · {exp.location}
-                  </p>
-                  <ul className="space-y-2">
-                    {exp.description.map((d, j) => (
-                      <li key={j} className="text-sm text-slate-300 flex gap-2">
-                        <span className="text-indigo-400 mt-1 shrink-0">▹</span>
-                        {d}
+                  <p className="text-xs text-text-muted mb-3">{exp.company}</p>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b, j) => (
+                      <li key={j} className="text-sm text-text-secondary flex gap-2">
+                        <span className="text-cyan mt-0.5 shrink-0">▸</span>
+                        {b}
                       </li>
                     ))}
                   </ul>
                 </div>
               </motion.div>
             ))}
+
+            {/* Education nodes */}
+            <div className="pt-4">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-xs uppercase tracking-widest text-text-muted pl-10 mb-4"
+              >
+                Education
+              </motion.p>
+              {education.map((edu, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="relative pl-10 mb-4"
+                >
+                  <div className="absolute left-0 top-1.5 w-[23px] h-[23px] rounded-full border-2 border-amber/40 bg-amber/5 flex items-center justify-center">
+                    <GraduationCap size={10} className="text-amber" />
+                  </div>
+                  <div className="rounded-xl border border-amber/10 bg-surface p-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                      <h3 className="text-sm font-semibold text-text">{edu.degree}</h3>
+                      <span className="text-xs font-mono text-text-muted">{edu.period}</span>
+                    </div>
+                    <p className="text-xs text-amber/70 mt-1">{edu.school}</p>
+                    <p className="text-xs text-text-muted mt-1">{edu.detail}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

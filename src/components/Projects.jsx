@@ -1,76 +1,74 @@
 import { motion } from "framer-motion";
-import { Folder, ExternalLink } from "lucide-react";
+import { Folder, ExternalLink, Leaf } from "lucide-react";
 import { projects } from "../data";
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-28 px-6">
+      <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-16 text-center"
+          className="font-display text-2xl sm:text-3xl font-bold text-center mb-16 gradient-text"
         >
-          <span className="gradient-text">Projects</span>
+          Projects
         </motion.h2>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {projects.map((project, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((p, i) => (
             <motion.div
               key={i}
-              variants={item}
-              className="glass rounded-2xl p-6 hover:glow transition-all duration-300 group flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className={`group rounded-xl border bg-surface p-5 flex flex-col transition-all duration-300 hover:scale-[1.02] ${
+                p.special
+                  ? "border-emerald/20 sm:col-span-2 lg:col-span-3 hover:border-emerald/40"
+                  : p.featured
+                  ? "border-cyan/15 sm:col-span-1 hover:border-cyan/30"
+                  : "border-border hover:border-cyan/20"
+              }`}
             >
-              <div className="flex items-center justify-between mb-4">
-                <Folder size={20} className="text-indigo-400" />
-                {project.link && project.link !== "#" && (
+              <div className="flex items-center justify-between mb-3">
+                {p.special ? (
+                  <Leaf size={18} className="text-emerald" />
+                ) : (
+                  <Folder size={18} className="text-cyan/60" />
+                )}
+                {p.link && (
                   <a
-                    href={project.link}
+                    href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-500 hover:text-indigo-400 transition-colors"
-                    aria-label={`View ${project.name}`}
+                    className="text-text-muted hover:text-cyan transition-colors"
+                    aria-label={`View ${p.name}`}
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={14} />
                   </a>
                 )}
               </div>
-              <h3 className="text-base font-semibold text-white group-hover:text-indigo-300 transition-colors mb-2">
-                {project.name}
+              <h3 className={`text-sm font-semibold mb-2 transition-colors ${
+                p.special ? "text-emerald group-hover:text-emerald" : "text-text group-hover:text-cyan"
+              }`}>
+                {p.name}
               </h3>
-              <p className="text-sm text-slate-400 leading-relaxed flex-1">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-300 border border-indigo-500/20"
-                  >
-                    {tag}
+              <p className="text-xs text-text-secondary leading-relaxed flex-1">{p.desc}</p>
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {p.tags.map((t) => (
+                  <span key={t} className={`text-[10px] px-2 py-0.5 rounded-md border ${
+                    p.special
+                      ? "border-emerald/15 bg-emerald/5 text-emerald/70"
+                      : "border-cyan/10 bg-cyan/5 text-cyan/70"
+                  }`}>
+                    {t}
                   </span>
                 ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

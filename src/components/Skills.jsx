@@ -1,61 +1,67 @@
 import { motion } from "framer-motion";
-import { skills } from "../data";
+import { Award } from "lucide-react";
+import { skills, certifications } from "../data";
 
-const categoryColors = {
-  "ML & AI": "from-indigo-500/20 to-indigo-500/5 border-indigo-500/20 hover:border-indigo-500/40",
-  "Data Engineering": "from-emerald-500/20 to-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/40",
-  "Languages": "from-amber-500/20 to-amber-500/5 border-amber-500/20 hover:border-amber-500/40",
-  "Cloud & DevOps": "from-cyan-500/20 to-cyan-500/5 border-cyan-500/20 hover:border-cyan-500/40",
-  "NLP & LLMs": "from-violet-500/20 to-violet-500/5 border-violet-500/20 hover:border-violet-500/40",
-};
-
-const badgeColors = {
-  "ML & AI": "bg-indigo-500/10 text-indigo-300 border-indigo-500/20",
-  "Data Engineering": "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
-  "Languages": "bg-amber-500/10 text-amber-300 border-amber-500/20",
-  "Cloud & DevOps": "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
-  "NLP & LLMs": "bg-violet-500/10 text-violet-300 border-violet-500/20",
+const catColors = {
+  "ML & AI": { border: "border-cyan/20", bg: "bg-cyan/5", text: "text-cyan", label: "text-cyan/70" },
+  "Data Engineering": { border: "border-emerald/20", bg: "bg-emerald/5", text: "text-emerald", label: "text-emerald/70" },
+  "Languages": { border: "border-amber/20", bg: "bg-amber/5", text: "text-amber", label: "text-amber/70" },
+  "Cloud & DevOps": { border: "border-blue-400/20", bg: "bg-blue-400/5", text: "text-blue-400", label: "text-blue-400/70" },
+  "NLP & LLMs": { border: "border-violet/20", bg: "bg-violet/5", text: "text-violet", label: "text-violet/70" },
 };
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-28 px-6">
+      <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-16 text-center"
+          className="font-display text-2xl sm:text-3xl font-bold text-center mb-16 gradient-text"
         >
-          <span className="gradient-text">Tech Arsenal</span>
+          Tech Arsenal
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(skills).map(([category, items], i) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`rounded-2xl p-6 bg-gradient-to-br border transition-all duration-300 ${categoryColors[category]}`}
-            >
-              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {items.map((skill) => (
-                  <span
-                    key={skill}
-                    className={`text-xs px-3 py-1.5 rounded-full border transition-transform duration-200 hover:scale-105 cursor-default ${badgeColors[category]}`}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(skills).map(([cat, items], i) => {
+            const c = catColors[cat];
+            return (
+              <motion.div
+                key={cat}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={`rounded-xl border ${c.border} bg-surface p-5`}
+              >
+                <h3 className={`text-xs uppercase tracking-widest ${c.label} mb-3`}>{cat}</h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {items.map((s) => (
+                    <span key={s} className={`text-xs px-2.5 py-1 rounded-md ${c.bg} ${c.text} border ${c.border} hover:scale-105 transition-transform cursor-default`}>
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* Certifications strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-2"
+        >
+          <Award size={14} className="text-amber" />
+          {certifications.map((cert, i) => (
+            <span key={i} className="text-xs px-3 py-1 rounded-full border border-amber/15 bg-amber/5 text-amber/80">
+              {cert}
+            </span>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

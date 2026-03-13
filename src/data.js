@@ -9,199 +9,141 @@ export const personal = {
   github: "https://github.com/stabgan",
   linkedin: "https://www.linkedin.com/in/stabgan",
   huggingface: "https://huggingface.co/stabgan",
-  scholar: "https://scholar.google.com/citations?user=KAUSTABH",
   taglines: [
-    "Senior AI/ML Engineer @ Gracenote (Nielsen)",
-    "MTech Industrial AI @ IIT Madras",
-    "Production ML · Clinical AI · LLM Fine-tuning",
-    "Embedding Fine-tuning · DSPy · LangChain · LangGraph",
-    "5 Published Research Papers · 8 Fine-tuned LLMs",
+    "Building production ML systems at scale",
+    "Fine-tuning LLMs & embedding models",
+    "Neural translation with DSPy & prompt optimization",
+    "Agentic workflows with LangChain & LangGraph",
+    "Published researcher · Springer · IEEE · Elsevier",
   ],
-  bio: "I build production ML systems, fine-tune LLMs, and architect data platforms at scale. Currently deep into embedding fine-tuning, neural machine translation with DSPy, prompt optimization, and agentic workflows with LangChain/LangGraph. I also work on golden dataset curation, LLM-as-a-Judge evaluation, AWS Bedrock proxy engineering, and harness engineering for ML pipelines.",
+  bio: [
+    "I build systems that think.",
+    "Production ML pipelines. Fine-tuned language models. Clinical AI that predicts ICU outcomes. Data platforms serving 50+ downstream consumers at scale.",
+    "Currently: embedding fine-tuning, neural machine translation with DSPy, prompt optimization, agentic workflows with LangChain/LangGraph, LLM-as-a-Judge evaluation, and AWS Bedrock proxy engineering at Gracenote (Nielsen).",
+    "Previously: architected enterprise data platforms at J&J MedTech, published 5 peer-reviewed papers, and shipped 100+ production releases with <2% rework rate.",
+    "When I'm not training models, I'm playing lead guitar or volunteering with Liquid Trees on climate ML using satellite data.",
+  ],
 };
 
-export const highlights = [
-  { value: "AUROC 0.95", label: "Production ML Models" },
-  { value: "5", label: "Peer-Reviewed Papers" },
-  { value: "100+", label: "Prod Releases (<2% rework)" },
-  { value: "87%", label: "Fewer Data Incidents" },
-  { value: "8", label: "Fine-tuned LLM Models" },
-  { value: "10+", label: "HuggingFace Datasets & Models" },
-  { value: "25+", label: "Engineers Mentored" },
-  { value: "11K+", label: "LinkedIn Followers" },
+export const impact = [
+  { value: "100+", label: "Production Deploys", sub: "<2% rework rate", color: "cyan" },
+  { value: "87%", label: "Fewer Data Incidents", sub: "Automated quality frameworks", color: "emerald" },
+  { value: "5", label: "Published Papers", sub: "Springer · IEEE · Elsevier", color: "violet" },
+  { value: "8", label: "Fine-tuned LLMs", sub: "10+ datasets on HuggingFace", color: "amber" },
+  { value: "50+", label: "Downstream Consumers", sub: "Enterprise data platform", color: "cyan" },
+  { value: "25+", label: "Engineers Mentored", sub: "Cross-functional teams", color: "violet" },
 ];
 
 export const experience = [
   {
     role: "Senior AI/ML Engineer",
     company: "Gracenote, a Nielsen Company",
-    location: "Bengaluru, India",
     period: "2025 – Present",
-    description: [
-      "Building production ML systems for media recognition and metadata enrichment",
-      "Embedding fine-tuning for content similarity and recommendation systems",
-      "Neural machine translation pipelines using DSPy and prompt optimization",
-      "Agentic workflows with LangChain and LangGraph for automated data processing",
-      "Golden dataset curation and LLM-as-a-Judge evaluation frameworks",
-      "AWS Bedrock proxy engineering and harness engineering for ML pipelines",
+    current: true,
+    bullets: [
+      "Embedding fine-tuning for content similarity & recommendation",
+      "Neural machine translation with DSPy & prompt optimization",
+      "Agentic workflows with LangChain/LangGraph",
+      "Golden dataset curation & LLM-as-a-Judge evaluation",
+      "AWS Bedrock proxy & harness engineering",
     ],
   },
   {
     role: "Data Architect & Data Scientist",
-    company: "TCS (Client: Johnson & Johnson MedTech)",
-    location: "Bengaluru, India",
+    company: "TCS → Johnson & Johnson MedTech",
     period: "2023 – 2025",
-    description: [
-      "Architected enterprise data platform serving 50+ downstream consumers",
-      "Built clinical NLP models achieving AUROC 0.95 for sepsis-AKI mortality prediction",
-      "Reduced data incidents by 87% through automated quality frameworks",
-      "Led migration of legacy ETL to modern cloud-native data pipelines",
-      "Mentored 15+ engineers on ML best practices and data architecture",
+    bullets: [
+      "Architected data platform serving 50+ downstream consumers",
+      "Clinical NLP models for sepsis-AKI mortality prediction",
+      "Reduced data incidents by 87% via automated quality frameworks",
+      "Led cloud-native data pipeline migration",
     ],
   },
   {
     role: "COE R&D Software Engineer",
-    company: "TCS (Client: Johnson & Johnson)",
-    location: "India",
+    company: "TCS → Johnson & Johnson",
     period: "2022 – 2023",
-    description: [
-      "R&D on advanced NLP techniques for medical document processing",
-      "Developed automated testing frameworks reducing rework to <2%",
-      "100+ production releases with enterprise-grade CI/CD pipelines",
-      "Cross-functional collaboration across global engineering teams",
+    bullets: [
+      "Advanced NLP for medical document processing",
+      "100+ production releases with enterprise CI/CD",
+      "Automated testing frameworks reducing rework to <2%",
     ],
   },
   {
     role: "Data Engineer → Lead",
-    company: "TCS (Client: Johnson & Johnson Vision)",
-    location: "India",
+    company: "TCS → Johnson & Johnson Vision",
     period: "2020 – 2022",
-    description: [
-      "Promoted from Data Engineer to Lead within 18 months",
-      "Built end-to-end data pipelines processing millions of records daily",
-      "Designed data models and ETL workflows for vision care analytics",
-      "Led a team of 10+ engineers across multiple workstreams",
+    bullets: [
+      "Promoted to Lead within 18 months",
+      "End-to-end pipelines processing millions of records daily",
+      "Led team of 10+ engineers across workstreams",
     ],
   },
   {
     role: "Machine Learning Intern",
     company: "Param.ai",
-    location: "Kolkata, India",
     period: "2018",
-    description: [
-      "Built ML models for resume parsing and candidate-job matching",
-      "NLP pipeline development for unstructured text extraction",
+    bullets: [
+      "ML models for resume parsing & candidate matching",
+      "NLP pipeline for unstructured text extraction",
     ],
   },
 ];
 
 export const education = [
   {
-    degree: "MTech in Industrial AI",
-    school: "Indian Institute of Technology (IIT) Madras",
+    degree: "MTech Industrial AI",
+    school: "IIT Madras",
     period: "2022 – 2024",
-    gpa: "GPA: 8.66 / 10",
-    thesis: "Sepsis-AKI Mortality Prediction using MIMIC-IV Clinical Data",
-    details: "Thesis on clinical AI — built deep learning models for ICU mortality prediction achieving AUROC 0.95 on MIMIC-IV dataset.",
+    detail: "GPA 8.66 · Thesis: Sepsis-AKI Mortality Prediction (MIMIC-IV)",
   },
   {
-    degree: "BTech in Information Technology",
-    school: "Kalyani Government Engineering College (KGEC)",
+    degree: "BTech Information Technology",
+    school: "KGEC",
     period: "2016 – 2020",
-    gpa: "CGPA: 8.15 / 10",
-    details: "Swami Vivekananda Merit Scholarship recipient. WBJEE Rank 3,450 out of 100K+ candidates. TCS CodeVita Top 1,200 out of 100K+ participants.",
+    detail: "CGPA 8.15 · Swami Vivekananda Scholar · WBJEE Rank 3,450/100K+",
   },
 ];
 
 export const skills = {
-  "ML & AI": ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace Transformers", "LangChain", "LangGraph", "DSPy", "OpenAI API", "AWS Bedrock", "MLflow", "Weights & Biases"],
-  "Data Engineering": ["Apache Spark", "Airflow", "dbt", "Snowflake", "Databricks", "Kafka", "Delta Lake", "Great Expectations"],
+  "ML & AI": ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "LangChain", "LangGraph", "DSPy", "OpenAI", "AWS Bedrock", "MLflow", "W&B"],
+  "Data Engineering": ["Spark", "Airflow", "dbt", "Snowflake", "Databricks", "Kafka", "Delta Lake"],
   "Languages": ["Python", "SQL", "JavaScript", "Java", "Bash", "R"],
-  "Cloud & DevOps": ["AWS (SageMaker, Bedrock, S3, Lambda, Glue)", "Azure (AI, Data, Fundamentals)", "Docker", "Kubernetes", "Terraform", "GitHub Actions", "CI/CD"],
-  "NLP & LLMs": ["Fine-tuning (LoRA, QLoRA)", "Prompt Engineering", "RAG", "Embedding Models", "Tokenizers", "RLHF", "LLM-as-a-Judge"],
+  "Cloud & DevOps": ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
+  "NLP & LLMs": ["LoRA/QLoRA", "Prompt Engineering", "RAG", "Embeddings", "RLHF", "LLM-as-a-Judge"],
 };
 
-export const publications = [
-  {
-    title: "Sepsis-AKI Mortality Prediction Using Deep Learning on MIMIC-IV",
-    venue: "Springer",
-    year: "2024",
-    link: "#",
-  },
-  {
-    title: "Automated Medical Document Classification Using Transformer Models",
-    venue: "IEEE",
-    year: "2023",
-    link: "#",
-  },
-  {
-    title: "Optimizing Data Pipeline Performance for Healthcare Analytics",
-    venue: "Elsevier",
-    year: "2023",
-    link: "#",
-  },
-  {
-    title: "Clinical NLP for Adverse Event Detection in Electronic Health Records",
-    venue: "IEEE",
-    year: "2022",
-    link: "#",
-  },
-  {
-    title: "Deep Learning Approaches for Medical Image Analysis",
-    venue: "Springer",
-    year: "2021",
-    link: "#",
-  },
+export const certifications = [
+  "PCAP – Python Programming",
+  "Azure AI Fundamentals",
+  "Azure Data Fundamentals",
+  "Azure Fundamentals",
+  "MIT – ML with Python",
 ];
 
-export const certifications = [
-  { name: "PCAP – Certified Associate in Python Programming", issuer: "Python Institute" },
-  { name: "Azure AI Fundamentals (AI-900)", issuer: "Microsoft" },
-  { name: "Azure Data Fundamentals (DP-900)", issuer: "Microsoft" },
-  { name: "Azure Fundamentals (AZ-900)", issuer: "Microsoft" },
-  { name: "Machine Learning with Python", issuer: "MIT (Online)" },
+export const publications = [
+  { title: "FemmeBand: IoT Smart Security Band using EMG Sensors", venue: "Springer", year: "2022", link: "https://link.springer.com/article/10.1007/s11334-022-00490-2" },
+  { title: "HeartHealth: Multi-Attribute Heart Condition Monitoring via Fuzzy-TOPSIS", venue: "IEEE", year: "2021", link: "https://ieeexplore.ieee.org/abstract/document/9455848" },
+  { title: "Predicting Bradycardia & Atrial Fibrillation Using Fuzzy Logic & IoT", venue: "Elsevier", year: "2021", link: "https://www.sciencedirect.com/science/article/pii/S2590093521000023" },
+  { title: "ValveCare: Fuzzy-Based Heart Disease Prediction with Arduino IoT", venue: "Springer", year: "2021", link: "https://link.springer.com/chapter/10.1007/978-3-030-75529-4_18" },
+  { title: "SafeBand: IoT Smart Security Band with Instant SOS Messaging", venue: "Springer", year: "2021", link: "https://link.springer.com/chapter/10.1007/978-981-16-5207-3_12" },
 ];
 
 export const projects = [
-  {
-    name: "Gemma-3 Fine-tuned Models",
-    description: "Collection of 8 fine-tuned Gemma-3 models for various NLP tasks, published on HuggingFace with 10+ datasets.",
-    tags: ["HuggingFace", "Fine-tuning", "Gemma-3", "LoRA"],
-    link: "https://huggingface.co/stabgan",
-  },
-  {
-    name: "Clinical AI — Sepsis-AKI Prediction",
-    description: "Deep learning system for ICU mortality prediction using MIMIC-IV clinical data, achieving AUROC 0.95 in production.",
-    tags: ["PyTorch", "Clinical AI", "MIMIC-IV", "Deep Learning"],
-  },
-  {
-    name: "Neural Machine Translation with DSPy",
-    description: "Prompt-optimized translation pipeline using DSPy framework for automated prompt engineering and neural translation.",
-    tags: ["DSPy", "NLP", "Prompt Optimization", "Translation"],
-  },
-  {
-    name: "Agentic RAG Workflows",
-    description: "Production agentic systems using LangChain and LangGraph for automated data processing and intelligent retrieval.",
-    tags: ["LangChain", "LangGraph", "RAG", "Agents"],
-  },
-  {
-    name: "LLM-as-a-Judge Evaluation",
-    description: "Evaluation framework using LLMs to assess model outputs, golden dataset curation, and automated quality scoring.",
-    tags: ["LLM", "Evaluation", "Golden Dataset", "Quality"],
-  },
-  {
-    name: "Liquid Trees — Climate ML",
-    description: "Volunteer project using satellite imagery and ML for river bioremediation and environmental monitoring.",
-    tags: ["Satellite Data", "Climate", "Computer Vision", "Volunteer"],
-    link: "#",
-  },
+  { name: "Gemma-3 Fine-tuned Models", desc: "8 fine-tuned Gemma-3 models for NLP tasks with 10+ datasets on HuggingFace.", tags: ["HuggingFace", "LoRA", "Gemma-3"], link: "https://huggingface.co/stabgan", featured: true },
+  { name: "Clinical AI — Sepsis-AKI", desc: "Deep learning for ICU mortality prediction on MIMIC-IV clinical data.", tags: ["PyTorch", "Clinical AI", "MIMIC-IV"], featured: true },
+  { name: "Neural Translation (DSPy)", desc: "Prompt-optimized translation pipeline with automated prompt engineering.", tags: ["DSPy", "NLP", "Prompt Optimization"] },
+  { name: "Agentic RAG Workflows", desc: "Production agentic systems for automated data processing & retrieval.", tags: ["LangChain", "LangGraph", "RAG"] },
+  { name: "LLM-as-a-Judge", desc: "Evaluation framework with golden dataset curation & automated quality scoring.", tags: ["LLM", "Evaluation", "Quality"] },
+  { name: "Liquid Trees", desc: "Volunteer: satellite imagery & ML for river bioremediation & climate monitoring.", tags: ["Climate ML", "Satellite", "Volunteer"], special: true },
 ];
 
 export const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Impact", href: "#impact" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
-  { label: "Research", href: "#publications" },
+  { label: "Research", href: "#research" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
