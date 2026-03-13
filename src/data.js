@@ -28,10 +28,62 @@ export const personal = {
 export const impact = [
   { value: "5", label: "Peer-Reviewed Papers", sub: "Springer · IEEE · Elsevier", color: "violet" },
   { value: "8", label: "Fine-tuned LLMs", sub: "Gemma-3 models on HuggingFace", color: "cyan" },
-  { value: "10+", label: "Open Datasets", sub: "Published on HuggingFace", color: "amber" },
-  { value: "1200", label: "TCS CodeVita Rank", sub: "Top 1.2% out of 100K+ coders", color: "emerald" },
-  { value: "3450", label: "WBJEE Rank", sub: "Top 3.5% out of 100K+ candidates", color: "violet" },
-  { value: "5+", label: "Years in Production ML", sub: "Clinical AI · NLP · Data Platforms", color: "cyan" },
+  { value: "410", label: "GATE Statistics AIR", sub: "All India Rank · Feb 2024", color: "amber" },
+  { value: "10+", label: "Open Datasets", sub: "Published on HuggingFace", color: "emerald" },
+  { value: "1200", label: "TCS CodeVita Rank", sub: "Top 1.2% of 100K+ coders", color: "cyan" },
+  { value: "5+", label: "Years in Production ML", sub: "Clinical AI · NLP · Data Platforms", color: "violet" },
+];
+
+export const recommendations = [
+  {
+    name: "Joy Smith Saha",
+    role: "Data Visualization Consultant, TCS",
+    relation: "Managed Kaustabh directly",
+    date: "Dec 2025",
+    quote: "He was the backbone of successful delivery of the project. Instrumental in designing and architecting the data and ML pipelines, which needed out of the box thinking. His command over technology in data, ML and AI is really commendable. Any team would be lucky to have him.",
+  },
+  {
+    name: "Suranjana Ghosh",
+    role: "Technical Architect, TCS",
+    relation: "Managed Kaustabh directly",
+    date: "Sep 2025",
+    quote: "Kaustabh impressed me with his deep technical expertise, especially in Python, and his ability to translate complex requirements into elegant, efficient code. He consistently delivered high-quality solutions under tight deadlines. He's the kind of engineer you can trust with critical tasks.",
+  },
+  {
+    name: "Subhrangshu Sekhar Mondal",
+    role: "Assistant Consultant, TCS",
+    relation: "Managed Kaustabh directly",
+    date: "Sep 2025",
+    quote: "He has always stood out as an exceptional associate who excelled both in technical capabilities and analytical prowess. Top notch capabilities in Data engineering and Data science/ML domain, now venturing into AI/Gen AI engagements. I rate him very highly both as a team member and an IC.",
+  },
+  {
+    name: "Prasun Biswas",
+    role: "Cloud Engineer, AWS Certified",
+    relation: "Managed Kaustabh directly",
+    date: "Sep 2025",
+    quote: "His expertise in Python played a pivotal role in our success. Exceptional technical proficiency, an ability to translate complex requirements into effective solutions, and a strong commitment to delivering quality under demanding timelines.",
+  },
+  {
+    name: "Amiya Karmakar",
+    role: "Principal Technical Lead, 5x Tableau Certified",
+    relation: "Worked with Kaustabh",
+    date: "Jul 2022",
+    quote: "Kaustabh is a person with great skills and profound expertise in Data engineering. His performance at work is golden. Result-driven, experienced and efficient team player. He denotes a lot of analytical capability.",
+  },
+  {
+    name: "Mainak Dhara",
+    role: "Backend Developer, M.Tech CSE @ IIIT-H",
+    relation: "Same team",
+    date: "Apr 2022",
+    quote: "Kaustabh is easily the most collaborative and knowledgeable person in the room.",
+  },
+  {
+    name: "Srayan Ray",
+    role: "Full Stack Engineer",
+    relation: "Same organization",
+    date: "Apr 2022",
+    quote: "One of those rare developers who has a deep passion for learning and exploring. He has owned and delivered multiple business solutions efficiently. A fast learner who can adapt to situations with ease.",
+  },
 ];
 
 export const experience = [
@@ -109,22 +161,49 @@ export const skills = {
   "ML & AI": ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "LangChain", "LangGraph", "DSPy", "OpenAI", "AWS Bedrock", "MLflow", "W&B"],
   "NLP & LLMs": ["LoRA/QLoRA Fine-tuning", "Prompt Engineering", "RAG", "Embedding Models", "RLHF", "LLM-as-a-Judge", "Tokenizers"],
   "Data Engineering": ["Spark", "Airflow", "dbt", "Snowflake", "Databricks", "Kafka", "Delta Lake"],
-  "Languages": ["Python", "SQL", "JavaScript", "Java", "Go", "Bash", "R"],
+  "Languages": ["Python", "SQL", "JavaScript", "Java", "Go", "C/C++", "Bash", "R"],
   "Cloud & Infra": ["AWS (SageMaker, Bedrock, S3, Lambda, Glue)", "Azure", "Docker", "Kubernetes", "Terraform", "GitHub Actions"],
 };
 
 export const certifications = [
-  "PCAP – Certified Associate in Python Programming",
-  "Microsoft Azure AI Fundamentals (AI-900)",
-  "Microsoft Azure Data Fundamentals (DP-900)",
-  "Microsoft Azure Fundamentals (AZ-900)",
-  "MITx 6.86x – Machine Learning with Python",
-  "MITx 6.00.1x – Introduction to CS & Programming",
-  "DSA Specialization – UC San Diego (6 courses)",
-  "Blockchain Specialization – U. of Buffalo (4 courses)",
-  "EF SET C2 Proficiency – English",
-  "Google – Crash Course on Python",
-  "Detecting COVID-19 with Chest X-Ray (PyTorch)",
+  { name: "Statistical Learning with Python", issuer: "Stanford University", year: "2025" },
+  { name: "AWS-ML: The Machine Learning Pipeline on AWS", issuer: "Trainocate / AWS", year: "2024" },
+  { name: "Mastering DSA using C and C++", issuer: "Udemy", year: "2025" },
+  { name: "Complete Prompt Engineering for AI Bootcamp", issuer: "Udemy", year: "2023" },
+  { name: "OpenAI API & ChatGPT API for Developers", issuer: "Udemy", year: "2023" },
+  { name: "PCAP – Certified Associate in Python Programming", issuer: "Python Institute", year: "2023" },
+  { name: "Scrum Master Certification", issuer: "Udemy", year: "2025" },
+  { name: "Microsoft Azure AI Fundamentals (AI-900)", issuer: "Microsoft", year: "2021" },
+  { name: "Microsoft Azure Data Fundamentals (DP-900)", issuer: "Microsoft", year: "2021" },
+  { name: "Microsoft Azure Fundamentals (AZ-900)", issuer: "Microsoft", year: "2021" },
+  { name: "Data Structures & Algorithms Specialization (6 courses)", issuer: "UC San Diego / Coursera", year: "2020" },
+  { name: "Blockchain Specialization (4 courses)", issuer: "U. of Buffalo / Coursera", year: "2020" },
+  { name: "Detecting COVID-19 with Chest X-Ray using PyTorch", issuer: "Coursera", year: "2020" },
+  { name: "Crash Course on Python", issuer: "Google / Coursera", year: "2020" },
+  { name: "6.86x: ML with Python – Linear Models to Deep Learning", issuer: "MIT", year: "2019" },
+  { name: "6.00.1x: Introduction to CS & Programming using Python", issuer: "MIT", year: "2017" },
+  { name: "Go: The Complete Developer's Guide (Golang)", issuer: "Udemy", year: "2022" },
+  { name: "Linux Administration Bootcamp", issuer: "Udemy", year: "2022" },
+  { name: "Data or Specimens Only Research", issuer: "CITI Program", year: "2024" },
+  { name: "EF SET C2 Proficient – English", issuer: "EF", year: "2023" },
+];
+
+export const testScores = [
+  { name: "GATE Statistics (ST)", score: "AIR 410", year: "2024" },
+  { name: "GATE Data Science & AI (DA)", score: "AIR 4,860", year: "2024" },
+  { name: "Raven's Progressive Matrices (IQ)", score: "138 — 99.4th percentile", year: "2025" },
+  { name: "Standard Progressive Matrices", score: "55/60 — 95th percentile", year: "2025" },
+  { name: "TCS CodeVita", score: "Rank 1,200 / 100K+", year: "2019" },
+  { name: "WBJEE", score: "AIR 3,450 / 100K+", year: "2016" },
+  { name: "PCAP (Python Institute)", score: "90%", year: "2023" },
+  { name: "WBBSE (10th Board)", score: "89% — Maths 99/100", year: "2014" },
+];
+
+export const honors = [
+  "Swami Vivekananda Merit cum Means Scholarship — Govt. of West Bengal (4 years)",
+  "Fine Arts Professional Diploma — Sarbabharatiya Charu-O-Karukala Niket",
+  "Vocal Classical & Rabindrasangeet Diploma — Pracheen Kala Kendra, Chandigarh (1st Division, Distinction)",
+  "PNTSE Rank 2 Zonal, Rank 46 West Bengal",
 ];
 
 export const publications = [
@@ -151,5 +230,6 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Research", href: "#research" },
   { label: "Projects", href: "#projects" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];

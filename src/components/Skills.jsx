@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
-import { skills, certifications } from "../data";
+import { Award, Brain, Trophy } from "lucide-react";
+import { skills, certifications, testScores, honors } from "../data";
 
 const catColors = {
   "ML & AI": { border: "border-cyan/20", bg: "bg-cyan/5", text: "text-cyan", label: "text-cyan/70" },
@@ -48,24 +48,67 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Certifications */}
+        {/* Test Scores & Competitive */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 rounded-xl border border-amber/10 bg-surface p-5"
+          className="mt-6 rounded-xl border border-cyan/10 bg-surface p-5"
         >
-          <h3 className="text-xs uppercase tracking-widest text-amber/70 mb-3 flex items-center gap-2">
-            <Award size={14} className="text-amber" />
-            Certifications & Courses
+          <h3 className="text-xs uppercase tracking-widest text-cyan/70 mb-4 flex items-center gap-2">
+            <Brain size={14} className="text-cyan" />
+            Test Scores & Competitive
           </h3>
-          <div className="flex flex-wrap gap-1.5">
-            {certifications.map((cert, i) => (
-              <span key={i} className="text-[11px] px-2.5 py-1 rounded-md border border-amber/10 bg-amber/5 text-amber/70">
-                {cert}
-              </span>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {testScores.map((t, i) => (
+              <div key={i} className="text-center">
+                <p className="text-sm font-mono font-medium text-cyan">{t.score}</p>
+                <p className="text-[11px] text-text-muted mt-0.5">{t.name}</p>
+              </div>
             ))}
           </div>
+        </motion.div>
+
+        {/* Certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6 rounded-xl border border-amber/10 bg-surface p-5"
+        >
+          <h3 className="text-xs uppercase tracking-widest text-amber/70 mb-4 flex items-center gap-2">
+            <Award size={14} className="text-amber" />
+            Certifications ({certifications.length})
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            {certifications.map((c, i) => (
+              <div key={i} className="flex items-baseline justify-between gap-2 py-1 border-b border-border/30 last:border-0">
+                <p className="text-xs text-text-secondary truncate">{c.name}</p>
+                <p className="text-[10px] text-text-muted shrink-0 font-mono">{c.issuer} · {c.year}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Honors */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6 rounded-xl border border-violet/10 bg-surface p-5"
+        >
+          <h3 className="text-xs uppercase tracking-widest text-violet/70 mb-3 flex items-center gap-2">
+            <Trophy size={14} className="text-violet" />
+            Honors & Awards
+          </h3>
+          <ul className="space-y-1.5">
+            {honors.map((h, i) => (
+              <li key={i} className="text-xs text-text-secondary flex gap-2">
+                <span className="text-violet/50 mt-0.5 shrink-0">▸</span>
+                {h}
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>
