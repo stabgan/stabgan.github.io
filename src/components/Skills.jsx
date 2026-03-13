@@ -4,10 +4,10 @@ import { skills, certifications } from "../data";
 
 const catColors = {
   "ML & AI": { border: "border-cyan/20", bg: "bg-cyan/5", text: "text-cyan", label: "text-cyan/70" },
+  "NLP & LLMs": { border: "border-violet/20", bg: "bg-violet/5", text: "text-violet", label: "text-violet/70" },
   "Data Engineering": { border: "border-emerald/20", bg: "bg-emerald/5", text: "text-emerald", label: "text-emerald/70" },
   "Languages": { border: "border-amber/20", bg: "bg-amber/5", text: "text-amber", label: "text-amber/70" },
-  "Cloud & DevOps": { border: "border-blue-400/20", bg: "bg-blue-400/5", text: "text-blue-400", label: "text-blue-400/70" },
-  "NLP & LLMs": { border: "border-violet/20", bg: "bg-violet/5", text: "text-violet", label: "text-violet/70" },
+  "Cloud & Infra": { border: "border-blue-400/20", bg: "bg-blue-400/5", text: "text-blue-400", label: "text-blue-400/70" },
 };
 
 export default function Skills() {
@@ -48,19 +48,24 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Certifications strip */}
+        {/* Certifications */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-2"
+          className="mt-8 rounded-xl border border-amber/10 bg-surface p-5"
         >
-          <Award size={14} className="text-amber" />
-          {certifications.map((cert, i) => (
-            <span key={i} className="text-xs px-3 py-1 rounded-full border border-amber/15 bg-amber/5 text-amber/80">
-              {cert}
-            </span>
-          ))}
+          <h3 className="text-xs uppercase tracking-widest text-amber/70 mb-3 flex items-center gap-2">
+            <Award size={14} className="text-amber" />
+            Certifications & Courses
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {certifications.map((cert, i) => (
+              <span key={i} className="text-[11px] px-2.5 py-1 rounded-md border border-amber/10 bg-amber/5 text-amber/70">
+                {cert}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
