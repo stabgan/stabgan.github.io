@@ -2,12 +2,19 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { personal } from "../data";
 
+const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 640px)").matches;
+const CHAR_DELAY = isMobile ? 0.02 : 0.035;
+
 const charVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: isMobile ? 20 : 40 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: 0.3 + i * 0.035, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: {
+      duration: isMobile ? 0.35 : 0.5,
+      delay: 0.3 + i * CHAR_DELAY,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
   }),
 };
 
@@ -75,7 +82,6 @@ export default function Hero() {
           className="mt-10 flex items-center gap-4 flex-wrap"
         >
           <a href="#contact" className="btn-primary">Get in touch</a>
-          <a href="#about" className="btn-secondary">Read more</a>
         </motion.div>
 
         {/* Bottom info row */}

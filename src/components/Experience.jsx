@@ -25,7 +25,14 @@ export default function Experience() {
               className="border-t border-border-light py-8 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
-                <h3 className="text-lg font-serif font-medium text-text">{exp.role}</h3>
+                <div className="flex items-center gap-3">
+                  <h3 className="text-lg font-serif font-medium text-text">{exp.role}</h3>
+                  {exp.current && (
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-accent border border-accent px-2 py-0.5">
+                      Current
+                    </span>
+                  )}
+                </div>
                 <span className="text-xs text-text-muted font-mono shrink-0">{exp.period}</span>
               </div>
               <p className="text-sm text-accent font-medium mb-5">{exp.company}</p>

@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../data";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  const sectionIds = useMemo(() => navLinks.map((l) => l.href.replace("#", "")), []);
+  const activeSection = useActiveSection(sectionIds);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
@@ -38,13 +42,20 @@ export default function Header() {
             KG
           </a>
           <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="link-underline text-[13px] text-text-muted hover:text-text transition-colors duration-200">
-                  {l.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((l) => {
+              const isActive = activeSection === l.href.replace("#", "");
+              return (
+                <li key={l.href}>
+                  <a href={l.href} className={`link-underline text-[13px] transition-colors duration-200 ${
+                    isActive
+                      ? "text-accent"
+                      : "text-text-muted hover:text-text"
+                  }`}>
+                    {l.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <button
             className="md:hidden text-text-secondary"
@@ -62,17 +73,24 @@ export default function Header() {
               exit={{ opacity: 0, y: -10 }}
               className="md:hidden bg-surface border-2 border-border-bold mx-4 mt-2 p-4 flex flex-col gap-1"
             >
-              {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="block text-sm text-text-secondary hover:text-accent py-2 px-3 transition-colors"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((l) => {
+                const isActive = activeSection === l.href.replace("#", "");
+                return (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className={`block text-sm py-2 px-3 transition-colors ${
+                        isActive
+                          ? "text-accent"
+                          : "text-text-secondary hover:text-accent"
+                      }`}
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                );
+              })}
             </motion.ul>
           )}
         </AnimatePresence>

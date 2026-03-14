@@ -21,7 +21,7 @@ export const personal = {
     "Production ML pipelines that serve real users. Fine-tuned language models deployed at scale. Clinical AI systems for ICU mortality prediction. End-to-end data platforms processing millions of records daily.",
     "Currently: embedding fine-tuning, neural machine translation with DSPy, prompt optimization, agentic workflows with LangChain/LangGraph, LLM-as-a-Judge evaluation, and AWS Bedrock proxy engineering at Gracenote (Nielsen).",
     "Previously: built clinical NLP systems at J&J MedTech, published 5 peer-reviewed papers across Springer, IEEE, and Elsevier, and fine-tuned 8 LLMs published on HuggingFace.",
-    "When I'm not training models, I'm playing lead guitar or volunteering with Liquid Trees on climate ML using satellite data.",
+    "When I'm not training models, I'm playing lead guitar, drawing from my fine arts training, or exploring vocal classical music — a multidisciplinary background that sharpens how I approach creative problem-solving. I also volunteer with Liquid Trees on climate ML using satellite data.",
   ],
 };
 
@@ -166,22 +166,22 @@ export const skills = {
 };
 
 export const certifications = [
-  { name: "Statistical Learning with Python", issuer: "Stanford University", year: "2025" },
-  { name: "AWS-ML: The Machine Learning Pipeline on AWS", issuer: "Trainocate / AWS", year: "2024" },
+  { name: "Statistical Learning with Python", issuer: "Stanford University", year: "2025", featured: true },
+  { name: "AWS-ML: The Machine Learning Pipeline on AWS", issuer: "Trainocate / AWS", year: "2024", featured: true },
   { name: "Mastering DSA using C and C++", issuer: "Udemy", year: "2025" },
   { name: "Complete Prompt Engineering for AI Bootcamp", issuer: "Udemy", year: "2023" },
   { name: "OpenAI API & ChatGPT API for Developers", issuer: "Udemy", year: "2023" },
-  { name: "PCAP – Certified Associate in Python Programming", issuer: "Python Institute", year: "2023" },
+  { name: "PCAP – Certified Associate in Python Programming", issuer: "Python Institute", year: "2023", featured: true },
   { name: "Scrum Master Certification", issuer: "Udemy", year: "2025" },
-  { name: "Microsoft Azure AI Fundamentals (AI-900)", issuer: "Microsoft", year: "2021" },
+  { name: "Microsoft Azure AI Fundamentals (AI-900)", issuer: "Microsoft", year: "2021", featured: true },
   { name: "Microsoft Azure Data Fundamentals (DP-900)", issuer: "Microsoft", year: "2021" },
   { name: "Microsoft Azure Fundamentals (AZ-900)", issuer: "Microsoft", year: "2021" },
-  { name: "Data Structures & Algorithms Specialization (6 courses)", issuer: "UC San Diego / Coursera", year: "2020" },
+  { name: "Data Structures & Algorithms Specialization (6 courses)", issuer: "UC San Diego / Coursera", year: "2020", featured: true },
   { name: "Blockchain Specialization (4 courses)", issuer: "U. of Buffalo / Coursera", year: "2020" },
   { name: "Detecting COVID-19 with Chest X-Ray using PyTorch", issuer: "Coursera", year: "2020" },
   { name: "Crash Course on Python", issuer: "Google / Coursera", year: "2020" },
-  { name: "6.86x: ML with Python – Linear Models to Deep Learning", issuer: "MIT", year: "2019" },
-  { name: "6.00.1x: Introduction to CS & Programming using Python", issuer: "MIT", year: "2017" },
+  { name: "6.86x: ML with Python – Linear Models to Deep Learning", issuer: "MIT", year: "2019", featured: true },
+  { name: "6.00.1x: Introduction to CS & Programming using Python", issuer: "MIT", year: "2017", featured: true },
   { name: "Go: The Complete Developer's Guide (Golang)", issuer: "Udemy", year: "2022" },
   { name: "Linux Administration Bootcamp", issuer: "Udemy", year: "2022" },
   { name: "Data or Specimens Only Research", issuer: "CITI Program", year: "2024" },
@@ -191,18 +191,12 @@ export const certifications = [
 export const testScores = [
   { name: "GATE Statistics (ST)", score: "AIR 410", year: "2024" },
   { name: "GATE Data Science & AI (DA)", score: "AIR 4,860", year: "2024" },
-  { name: "Raven's Progressive Matrices (IQ)", score: "138 — 99.4th percentile", year: "2025" },
-  { name: "Standard Progressive Matrices", score: "55/60 — 95th percentile", year: "2025" },
   { name: "TCS CodeVita", score: "Rank 1,200 / 100K+", year: "2019" },
-  { name: "WBJEE", score: "AIR 3,450 / 100K+", year: "2016" },
   { name: "PCAP (Python Institute)", score: "90%", year: "2023" },
-  { name: "WBBSE (10th Board)", score: "89% — Maths 99/100", year: "2014" },
 ];
 
 export const honors = [
   "Swami Vivekananda Merit cum Means Scholarship — Govt. of West Bengal (4 years)",
-  "Fine Arts Professional Diploma — Sarbabharatiya Charu-O-Karukala Niket",
-  "Vocal Classical & Rabindrasangeet Diploma — Pracheen Kala Kendra, Chandigarh (1st Division, Distinction)",
   "PNTSE Rank 2 Zonal, Rank 46 West Bengal",
 ];
 

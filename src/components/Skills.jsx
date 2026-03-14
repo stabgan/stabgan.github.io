@@ -1,7 +1,19 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { skills, certifications, testScores, honors } from "../data";
+import Collapsible from "./Collapsible";
 
 export default function Skills() {
+  const [showAll, setShowAll] = useState(false);
+
+  const VISIBLE_COUNT = 6;
+  const featuredCerts = certifications.filter((c) => c.featured);
+  const remainingCerts = certifications.filter((c) => !c.featured);
+  const visibleCerts = featuredCerts.length >= VISIBLE_COUNT
+    ? featuredCerts.slice(0, VISIBLE_COUNT)
+    : [...featuredCerts, ...remainingCerts.slice(0, VISIBLE_COUNT - featuredCerts.length)];
+  const hiddenCerts = certifications.filter((c) => !visibleCerts.includes(c));
+
   return (
     <section id="skills" className="section-border py-28 sm:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
@@ -74,13 +86,33 @@ export default function Skills() {
             <span className="text-xs text-text-muted font-mono">{certifications.length}</span>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-x-16">
-            {certifications.map((c, i) => (
+            {visibleCerts.map((c, i) => (
               <div key={i} className="flex items-baseline justify-between gap-4 py-2.5 border-b border-border-light">
                 <p className="text-[13px] text-text-secondary truncate">{c.name}</p>
                 <p className="text-[10px] text-text-muted shrink-0 font-mono">{c.year}</p>
               </div>
             ))}
           </div>
+
+          <Collapsible isExpanded={showAll}>
+            <div className="grid sm:grid-cols-2 gap-x-16">
+              {hiddenCerts.map((c, i) => (
+                <div key={i} className="flex items-baseline justify-between gap-4 py-2.5 border-b border-border-light">
+                  <p className="text-[13px] text-text-secondary truncate">{c.name}</p>
+                  <p className="text-[10px] text-text-muted shrink-0 font-mono">{c.year}</p>
+                </div>
+              ))}
+            </div>
+          </Collapsible>
+
+          {hiddenCerts.length > 0 && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="text-xs text-accent font-mono mt-4 hover:underline"
+            >
+              {showAll ? "Show less" : `Show all ${certifications.length}`}
+            </button>
+          )}
         </div>
 
         {/* Honors */}
