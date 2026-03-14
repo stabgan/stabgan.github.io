@@ -21,7 +21,7 @@ export const personal = {
     "Production ML pipelines that serve real users. Fine-tuned language models deployed at scale. Clinical AI systems for ICU mortality prediction. End-to-end data platforms processing millions of records daily.",
     "Currently: embedding fine-tuning, neural machine translation with DSPy, prompt optimization, agentic workflows with LangChain/LangGraph, LLM-as-a-Judge evaluation, and AWS Bedrock proxy engineering at Gracenote (Nielsen).",
     "Previously: built clinical NLP systems at J&J MedTech, published 5 peer-reviewed papers across Springer, IEEE, and Elsevier, and fine-tuned 8 LLMs published on HuggingFace.",
-    "When I'm not training models, I'm playing lead guitar, drawing from my fine arts training, or exploring vocal classical music — a multidisciplinary background that sharpens how I approach creative problem-solving. I also volunteer with Liquid Trees on climate ML using satellite data.",
+    "When I'm not training models, I'm playing lead guitar, drawing from my fine arts training, or exploring vocal classical music — a multidisciplinary background that sharpens how I approach creative problem-solving.",
   ],
 };
 
@@ -214,7 +214,6 @@ export const projects = [
   { name: "Neural Translation (DSPy)", desc: "Prompt-optimized translation pipeline using DSPy for automated prompt engineering & neural machine translation.", tags: ["DSPy", "NLP", "Prompt Optimization"] },
   { name: "Agentic RAG Workflows", desc: "Production agentic systems using LangChain & LangGraph for automated data processing & intelligent retrieval.", tags: ["LangChain", "LangGraph", "RAG"] },
   { name: "LLM-as-a-Judge", desc: "Evaluation framework using LLMs to assess model outputs with golden dataset curation & automated quality scoring.", tags: ["LLM", "Evaluation", "Quality"] },
-  { name: "Liquid Trees", desc: "Volunteer: satellite imagery & ML for river bioremediation & environmental monitoring.", tags: ["Climate ML", "Satellite", "Volunteer"], special: true },
 ];
 
 export const navLinks = [
