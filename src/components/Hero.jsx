@@ -1,22 +1,26 @@
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { personal } from "../data";
+import { useIsMobile } from "../hooks/useIsMobile";
 
-const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 640px)").matches;
-const CHAR_DELAY = isMobile ? 0.02 : 0.035;
-
-const charVariants = {
-  hidden: { opacity: 0, y: isMobile ? 20 : 40 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: isMobile ? 0.35 : 0.5,
-      delay: 0.3 + i * CHAR_DELAY,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  }),
-};
+function useCharVariants(isMobile) {
+  return useMemo(() => {
+    const charDelay = isMobile ? 0.02 : 0.035;
+    return {
+      hidden: { opacity: 0, y: isMobile ? 20 : 40 },
+      visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: isMobile ? 0.35 : 0.5,
+          delay: 0.3 + i * charDelay,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        },
+      }),
+    };
+  }, [isMobile]);
+}
 
 const lineReveal = {
   hidden: { scaleX: 0 },
@@ -24,6 +28,8 @@ const lineReveal = {
 };
 
 export default function Hero() {
+  const isMobile = useIsMobile();
+  const charVariants = useCharVariants(isMobile);
   const nameChars = personal.name.split("");
 
   return (

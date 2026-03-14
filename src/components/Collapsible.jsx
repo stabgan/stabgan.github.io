@@ -1,10 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
-
-const prefersReducedMotion =
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 export default function Collapsible({ children, isExpanded, duration = 0.4 }) {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const effectiveDuration = prefersReducedMotion ? 0 : duration;
 
   return (

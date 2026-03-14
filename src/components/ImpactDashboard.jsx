@@ -4,25 +4,27 @@ import { impact } from "../data";
 
 function CountUp({ value, inView }) {
   const [display, setDisplay] = useState("0");
-  const numericPart = value.replace(/[^0-9.]/g, "");
-  const prefix = value.match(/^[^0-9]*/)?.[0] || "";
-  const suffix = value.replace(/^[^0-9]*[0-9.]+/, "") || "";
 
   useEffect(() => {
     if (!inView) return;
+    const numericPart = value.replace(/[^0-9.]/g, "");
+    const prefix = value.match(/^[^0-9]*/)?.[0] || "";
+    const suffix = value.replace(/^[^0-9]*[0-9.]+/, "") || "";
     const target = parseFloat(numericPart);
     if (isNaN(target)) { setDisplay(value); return; }
     const duration = 1400;
     const start = performance.now();
+    let rafId;
     function tick(now) {
       const p = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       const current = Math.round(eased * target);
       setDisplay(`${prefix}${current.toLocaleString()}${suffix}`);
-      if (p < 1) requestAnimationFrame(tick);
+      if (p < 1) rafId = requestAnimationFrame(tick);
     }
-    requestAnimationFrame(tick);
-  }, [inView, value, numericPart, prefix, suffix]);
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [inView, value]);
 
   return <span>{display}</span>;
 }

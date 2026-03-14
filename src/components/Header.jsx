@@ -37,7 +37,7 @@ export default function Header() {
             : "py-5"
         }`}
       >
-        <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+        <nav aria-label="Main navigation" className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
           <a href="#" className="font-serif text-base font-medium text-text hover:text-accent transition-colors">
             KG
           </a>

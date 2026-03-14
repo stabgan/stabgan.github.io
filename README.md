@@ -5,8 +5,8 @@
 <h1 align="center">stabgan.com</h1>
 
 <p align="center">
-  Personal portfolio website for <a href="https://stabgan.com">Kaustabh Ganguly</a> — Senior AI/ML Engineer.<br/>
-  A fast, animated single-page app showcasing experience, publications, projects, and more.
+  Personal portfolio for <a href="https://stabgan.com">Kaustabh Ganguly</a> — Senior AI/ML Engineer.<br/>
+  A fast, animated single-page React app showcasing experience, publications, projects, and more.
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -36,39 +36,41 @@
 
 ## Sections
 
-Hero · Manifesto · Impact Dashboard · Experience · Skills · Publications · Projects · Testimonials · Contact
+Hero · About · Impact Dashboard · Experience · Skills · Publications · Projects · Testimonials · Contact
 
-Each section uses Framer Motion scroll-triggered animations with `prefers-reduced-motion` respected via CSS.
+Each section uses Framer Motion scroll-triggered animations with `prefers-reduced-motion` respected via CSS and runtime hooks.
 
 ## Project Structure
 
 ```
 src/
 ├── main.jsx              # Entry point, font imports, StrictMode
-├── App.jsx               # Root layout, Lenis smooth-scroll init
+├── App.jsx               # Root layout, Lenis smooth-scroll init, skip-to-content
 ├── data.js               # All portfolio content (experience, pubs, skills, etc.)
 ├── index.css             # Tailwind v4 @theme tokens, custom utilities
 ├── components/
-│   ├── Header.jsx        # Sticky nav with active-section highlighting
-│   ├── Hero.jsx          # Animated hero with rotating taglines
-│   ├── Manifesto.jsx     # Personal philosophy section
-│   ├── ImpactDashboard.jsx
-│   ├── Experience.jsx
-│   ├── Skills.jsx
-│   ├── Publications.jsx
-│   ├── Projects.jsx
-│   ├── Testimonials.jsx
-│   ├── Contact.jsx
-│   ├── Footer.jsx
-│   └── Collapsible.jsx   # Reusable expand/collapse component
+│   ├── Header.jsx        # Sticky nav with scroll progress bar & active-section highlighting
+│   ├── Hero.jsx          # Animated hero with character-stagger name reveal
+│   ├── Manifesto.jsx     # About / personal philosophy section
+│   ├── ImpactDashboard.jsx  # Animated count-up stats grid
+│   ├── Experience.jsx    # Work history & education timeline
+│   ├── Skills.jsx        # Skills grid, test scores, certifications, honors
+│   ├── Publications.jsx  # Peer-reviewed papers with external links
+│   ├── Projects.jsx      # Featured project cards
+│   ├── Testimonials.jsx  # LinkedIn recommendations (dark section)
+│   ├── Contact.jsx       # CTA + social links
+│   ├── Footer.jsx        # Copyright & back-to-top
+│   └── Collapsible.jsx   # Reusable expand/collapse with reduced-motion support
 ├── hooks/
-│   └── useActiveSection.js  # IntersectionObserver-based active nav tracking
+│   ├── useActiveSection.js       # IntersectionObserver-based active nav tracking
+│   ├── useIsMobile.js            # Reactive mobile breakpoint detection
+│   └── usePrefersReducedMotion.js # Reactive reduced-motion preference
 └── __tests__/            # Property-based tests (fast-check + Vitest)
 ```
 
 ## Running Locally
 
-**Prerequisites:** Node.js ≥ 18 and npm.
+Requires Node.js ≥ 18 and npm.
 
 ```bash
 git clone https://github.com/stabgan/stabgan.github.io.git
@@ -77,12 +79,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open [http://localhost:5173](http://localhost:5173).
 
-### Other Commands
+### Commands
 
 | Command | Description |
 |---|---|
+| `npm run dev` | Start dev server with HMR |
 | `npm run build` | Production build → `dist/` |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run ESLint across the project |
@@ -98,13 +101,11 @@ Pushes to `master` trigger the GitHub Actions workflow (`.github/workflows/deplo
 
 Custom domain: **stabgan.com**
 
-## Known Issues
+## ⚠️ Known Issues
 
-- **No dark mode** — the site uses a fixed warm light palette (`#FAF9F5` background). A dark theme is not yet implemented.
+- **No dark mode** — the site uses a fixed warm light palette. A dark theme is not yet implemented.
 - **Lenis + keyboard navigation** — Lenis smooth-scroll can occasionally interfere with keyboard-only navigation and anchor jumps. The `prefers-reduced-motion` media query disables CSS animations but Lenis itself stays active.
 - **No SSR / SEO limits** — as a client-rendered SPA, search engine crawlers that don't execute JavaScript may see an empty page. Basic `<meta>` and Open Graph tags are present in `index.html`.
-- **No `<noscript>` fallback** — the site renders a blank page if JavaScript is disabled.
-- **Mobile nav** — on very small viewports the horizontal nav links may overflow; there is no hamburger menu.
 
 ## License
 

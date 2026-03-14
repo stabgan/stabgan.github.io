@@ -3,13 +3,13 @@ import { recommendations } from "../data";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="section-border py-28 sm:py-32 px-6 bg-[#141413] text-[#FAF9F5]">
+    <section id="testimonials" className="section-border py-28 sm:py-32 px-6 bg-text text-text-inverse">
       <div className="max-w-[1200px] mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-xs uppercase tracking-[0.2em] text-[#9C9A95] font-mono mb-12"
+          className="text-xs uppercase tracking-[0.2em] text-text-muted font-mono mb-12"
         >
           Testimonials
         </motion.p>
@@ -22,14 +22,14 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-20 max-w-[800px]"
         >
-          <p className="font-serif italic text-[clamp(1.5rem,3.5vw,2.5rem)] font-medium leading-[1.35] text-[#FAF9F5]">
+          <p className="font-serif italic text-[clamp(1.5rem,3.5vw,2.5rem)] font-medium leading-[1.35] text-text-inverse">
             &ldquo;{recommendations[0].quote}&rdquo;
           </p>
           <footer className="mt-8 flex items-center gap-4">
             <div className="w-8 h-[2px] bg-accent" />
             <div>
-              <p className="text-sm font-medium text-[#FAF9F5]">{recommendations[0].name}</p>
-              <p className="text-xs text-[#9C9A95] mt-0.5">{recommendations[0].role}</p>
+              <p className="text-sm font-medium text-text-inverse">{recommendations[0].name}</p>
+              <p className="text-xs text-text-muted mt-0.5">{recommendations[0].role}</p>
             </div>
           </footer>
         </motion.blockquote>
@@ -43,14 +43,14 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="border-t border-[#2A2A28] py-8"
+              className="border-t border-border-light/20 py-8"
             >
-              <p className="font-serif text-[17px] leading-[1.6] text-[#FAF9F5] italic">
+              <p className="font-serif text-[17px] leading-[1.6] text-text-inverse italic">
                 &ldquo;{rec.quote}&rdquo;
               </p>
               <footer className="mt-5">
-                <p className="text-sm font-medium text-[#FAF9F5]">{rec.name}</p>
-                <p className="text-xs text-[#9C9A95] mt-0.5">{rec.role} · {rec.date}</p>
+                <p className="text-sm font-medium text-text-inverse">{rec.name}</p>
+                <p className="text-xs text-text-muted mt-0.5">{rec.role} · {rec.date}</p>
               </footer>
             </motion.blockquote>
           ))}
